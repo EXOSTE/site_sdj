@@ -1,0 +1,431 @@
+/*
+ * CSS Personnalisé pour WordPress - Le Silence Des Justes
+ * À copier dans : Apparence > Personnaliser > CSS Additionnel
+ * Ou à ajouter via un plugin comme "Simple Custom CSS"
+ */
+
+/* ================================
+   VARIABLES DE COULEURS SDJ
+   ================================ */
+:root {
+    /* Couleurs principales */
+    --primary: #16479e;
+    --primary-dark: #0d2d66;
+    --primary-light: #1a5ac2;
+    --primary-glow: rgba(22, 71, 158, 0.4);
+
+    /* Couleurs secondaires */
+    --secondary: #0ea5e9;
+    --secondary-light: #38bdf8;
+
+    /* Couleur accent (jaune) */
+    --accent: #f2d411;
+    --accent-hover: #d4b80e;
+    --accent-glow: rgba(242, 212, 17, 0.5);
+
+    /* Arrière-plans */
+    --bg-body: #ffffff;
+    --bg-light: #f7f9fb;
+    --bg-dark: #050e1f;
+    --bg-gradient: linear-gradient(135deg, #16479e 0%, #0d3a7a 50%, #050e1f 100%);
+
+    /* Texte */
+    --text-main: #54595f;
+    --text-light: #7a7a7a;
+    --text-dark: #050e1f;
+    --text-white: #ffffff;
+
+    /* Typographies */
+    --font-heading: "Montserrat", sans-serif;
+    --font-body: "Open Sans", sans-serif;
+
+    /* Ombres */
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08);
+    --shadow-md: 0 4px 15px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 15px 40px rgba(0, 0, 0, 0.12);
+    --shadow-glow-primary: 0 10px 40px rgba(22, 71, 158, 0.3);
+    --shadow-glow-accent: 0 10px 40px rgba(242, 212, 17, 0.35);
+
+    /* Glassmorphism */
+    --glass-bg: rgba(255, 255, 255, 0.85);
+    --glass-blur: blur(20px);
+
+    /* Transitions */
+    --transition: all 0.3s ease;
+    --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ================================
+   TYPOGRAPHIES
+   ================================ */
+body {
+    font-family: var(--font-body);
+    color: var(--text-main);
+    line-height: 1.6;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--font-heading);
+    color: var(--primary);
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+/* ================================
+   BOUTONS PERSONNALISÉS
+   ================================ */
+
+/* Bouton Principal (Bleu) */
+.btn-primary,
+.elementor-button.elementor-button-primary,
+.wp-block-button__link {
+    background-color: var(--primary) !important;
+    color: var(--text-white) !important;
+    border-radius: 4px !important;
+    font-weight: 600 !important;
+    padding: 12px 30px !important;
+    transition: var(--transition) !important;
+    border: none !important;
+}
+
+.btn-primary:hover,
+.elementor-button.elementor-button-primary:hover,
+.wp-block-button__link:hover {
+    background-color: var(--primary-light) !important;
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md) !important;
+}
+
+/* Bouton Accent (Jaune - Faire un don) */
+.btn-accent,
+.elementor-button.elementor-button-accent {
+    background-color: var(--accent) !important;
+    color: var(--text-dark) !important;
+    font-weight: 700 !important;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-accent:hover,
+.elementor-button.elementor-button-accent:hover {
+    background-color: var(--accent-hover) !important;
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-glow-accent) !important;
+}
+
+/* Bouton Outline */
+.btn-outline {
+    background-color: transparent !important;
+    border: 2px solid var(--primary) !important;
+    color: var(--primary) !important;
+}
+
+.btn-outline:hover {
+    background-color: var(--primary) !important;
+    color: var(--text-white) !important;
+}
+
+/* ================================
+   MEGA BOUTON DON (Effet spécial)
+   ================================ */
+.btn-mega-donate {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 18px 45px;
+    font-size: 1.1rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--text-dark);
+    background: linear-gradient(135deg, var(--accent) 0%, #ffd700 50%, var(--accent) 100%);
+    background-size: 200% 200%;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    overflow: hidden;
+    text-decoration: none;
+    box-shadow:
+        0 8px 30px rgba(242, 212, 17, 0.5),
+        0 4px 15px rgba(0, 0, 0, 0.1),
+        inset 0 2px 0 rgba(255, 255, 255, 0.3),
+        inset 0 -2px 0 rgba(0, 0, 0, 0.1);
+    animation: shimmer 3s infinite linear;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-mega-donate:hover {
+    transform: translateY(-4px) scale(1.02);
+    box-shadow:
+        0 15px 50px rgba(242, 212, 17, 0.6),
+        0 8px 25px rgba(0, 0, 0, 0.15),
+        inset 0 2px 0 rgba(255, 255, 255, 0.4);
+}
+
+.btn-mega-donate i {
+    margin-right: 10px;
+    animation: heartbeat 1.5s infinite;
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+@keyframes heartbeat {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+}
+
+/* ================================
+   CARTES (Cards)
+   ================================ */
+.card,
+.elementor-widget-image-box,
+.e-con {
+    background: var(--bg-body);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+    transition: var(--transition-smooth);
+}
+
+.card:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 25px 50px rgba(22, 71, 158, 0.15);
+}
+
+/* ================================
+   SECTIONS
+   ================================ */
+.section-subtitle,
+.elementor-widget-heading .elementor-heading-title.section-subtitle {
+    display: block;
+    color: var(--accent) !important;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+}
+
+.bg-light,
+.elementor-section.bg-light {
+    background-color: var(--bg-light) !important;
+}
+
+/* ================================
+   HEADER / NAVIGATION
+   ================================ */
+.site-header,
+.ast-primary-header {
+    background: var(--glass-bg) !important;
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
+    box-shadow: var(--shadow-md);
+}
+
+.ast-header-break-point .ast-mobile-menu-buttons a {
+    color: var(--primary);
+}
+
+/* ================================
+   FOOTER
+   ================================ */
+footer,
+.site-footer,
+.ast-footer {
+    background-color: var(--bg-dark) !important;
+    color: #cbd5e1;
+}
+
+footer h4,
+.ast-footer h4 {
+    color: var(--text-white) !important;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+footer h4::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 40px;
+    height: 2px;
+    background: var(--accent);
+}
+
+/* ================================
+   FORMULAIRES
+   ================================ */
+.wpcf7 input[type="text"],
+.wpcf7 input[type="email"],
+.wpcf7 textarea {
+    border: 1px solid #e0e0e0;
+    padding: 12px 15px;
+    border-radius: 4px;
+    transition: var(--transition);
+}
+
+.wpcf7 input:focus,
+.wpcf7 textarea:focus {
+    border-color: var(--primary);
+    outline: none;
+    box-shadow: 0 0 0 3px var(--primary-glow);
+}
+
+.wpcf7 input[type="submit"] {
+    background-color: var(--primary);
+    color: var(--text-white);
+    border: none;
+    padding: 12px 30px;
+    border-radius: 4px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.wpcf7 input[type="submit"]:hover {
+    background-color: var(--primary-light);
+    transform: translateY(-2px);
+}
+
+/* ================================
+   ANIMATIONS
+   ================================ */
+.fade-in-up {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease-out;
+}
+
+.fade-in-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ================================
+   RESPONSIVE
+   ================================ */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem !important;
+    }
+
+    h2 {
+        font-size: 1.5rem !important;
+    }
+
+    .btn-mega-donate {
+        padding: 14px 30px;
+        font-size: 0.95rem;
+    }
+}
+
+/* ================================
+   ICÔNES MISSIONS (Cercles)
+   ================================ */
+.mission-icon-circle {
+    width: 100px;
+    height: 100px;
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    box-shadow: var(--shadow-glow-primary);
+    transition: var(--transition-smooth);
+}
+
+.mission-icon-circle i {
+    font-size: 2.5rem;
+    color: var(--text-white);
+}
+
+.mission-icon-circle:hover {
+    transform: scale(1.1) rotate(5deg);
+    box-shadow: 0 20px 50px rgba(22, 71, 158, 0.4);
+}
+
+/* ================================
+   LIENS SOCIAUX
+   ================================ */
+.social-links a,
+.ast-footer-social-icon a {
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.1);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: var(--transition);
+    color: var(--text-white);
+    font-size: 1.1rem;
+    margin-right: 10px;
+}
+
+.social-links a:hover,
+.ast-footer-social-icon a:hover {
+    background: var(--accent);
+    color: var(--text-dark);
+    transform: translateY(-3px);
+}
+
+/* ================================
+   SLIDER PARTENAIRES (Swiper)
+   ================================ */
+.partner-logo {
+    max-height: 80px;
+    filter: grayscale(100%);
+    opacity: 0.6;
+    transition: var(--transition);
+}
+
+.partner-logo:hover {
+    filter: grayscale(0%);
+    opacity: 1;
+}
+
+/* ================================
+   POLYLANG - SÉLECTEUR DE LANGUE
+   ================================ */
+.pll-parent-menu-item>a::after {
+    content: " ▼";
+    font-size: 0.7em;
+}
+
+.lang-item a {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.lang-item img {
+    width: 20px;
+    height: auto;
+}
