@@ -3808,3 +3808,125 @@ body.loaded #preloader .preloader-content {
         font-size: 2.5rem;
     }
 }
+/* --- UNIQUE EXPERIENCE EXPANSION --- */
+
+/* 1. INFINITE MARQUEE */
+.marquee-section {
+    background: var(--primary);
+    padding: 20px 0;
+    overflow: hidden;
+    white-space: nowrap;
+    position: relative;
+    transform: rotate(-1deg) scale(1.02);
+    /* Slight chaotic tilt */
+    z-index: 10;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.marquee-content {
+    display: inline-block;
+    animation: marqueeScroll 30s linear infinite;
+}
+
+.marquee-item {
+    display: inline-block;
+    font-size: 2.5rem;
+    color: white;
+    font-weight: 900;
+    text-transform: uppercase;
+    margin-right: 60px;
+    font-family: var(--font-heading);
+    -webkit-text-stroke: 1px rgba(255, 255, 255, 0.3);
+    /* Outline text effect */
+}
+
+.marquee-item.filled {
+    color: var(--accent);
+    -webkit-text-stroke: 0;
+}
+
+@keyframes marqueeScroll {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+/* 2. CUSTOM CURSOR */
+.custom-cursor {
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--accent);
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none;
+    z-index: 9999;
+    transform: translate(-50%, -50%);
+    transition: width 0.3s, height 0.3s, background-color 0.3s;
+    mix-blend-mode: difference;
+    display: none;
+    /* Hidden on mobile via media query usually, or JS detection */
+}
+
+.custom-cursor.hovered {
+    width: 50px;
+    height: 50px;
+    background-color: rgba(242, 212, 17, 0.5);
+    /* Accent semi-transparent */
+    border-color: transparent;
+}
+
+@media (min-width: 992px) {
+    .custom-cursor {
+        display: block;
+    }
+
+    /* Hide default cursor only on desktop when custom is active */
+    /* body { cursor: none; } - Careful with this, can be annoying if buggy */
+}
+
+/* 3. ORGANIC SECTION DIVIDERS */
+.organic-shape-top {
+    position: absolute;
+    top: -50px;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    z-index: 1;
+}
+
+.organic-shape-bottom {
+    position: absolute;
+    bottom: -50px;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(180deg);
+    z-index: 1;
+}
+
+.organic-shape svg {
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 50px;
+}
+
+.organic-fill {
+    fill: #FFFFFF;
+}
+
+.bg-light .organic-fill {
+    fill: #F8FAFC;
+}
+
+/* Enhancing existing sections for the organic overlap */
+.immersive-missions,
+.project-spotlight-section,
+.magazine-section {
+    position: relative;
+}

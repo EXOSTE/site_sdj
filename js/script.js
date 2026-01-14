@@ -380,3 +380,34 @@ let mobileStyles = document.createElement("style");
     }
 `),
   document.head.appendChild(mobileStyles));
+
+// --- CUSTOM CURSOR LOGIC ---
+document.addEventListener('DOMContentLoaded', () => {
+    const cursor = document.querySelector('.custom-cursor');
+    
+    // Only activate on non-touch devices
+    if (matchMedia('(pointer:fine)').matches) {
+        document.addEventListener('mousemove', e => {
+            cursor.style.left = e.clientX + 'px';
+            cursor.style.top = e.clientY + 'px';
+        });
+
+        // Add hover effect for links and buttons
+        const interactiveElements = document.querySelectorAll('a, button, .btn, .card, .mission-row, .project-spotlight-item, .cinematic-section');
+        
+        interactiveElements.forEach(el => {
+            el.addEventListener('mouseenter', () => cursor.classList.add('hovered'));
+            el.addEventListener('mouseleave', () => cursor.classList.remove('hovered'));
+        });
+        
+        // Hide default cursor for body but keep for inputs if needed
+        document.body.style.cursor = 'none';
+        
+        // Re-enable default cursor for inputs
+        document.querySelectorAll('input, textarea').forEach(el => {
+            el.style.cursor = 'text';
+            el.addEventListener('mouseenter', () => cursor.style.display = 'none');
+            el.addEventListener('mouseleave', () => cursor.style.display = 'block');
+        });
+    }
+});
