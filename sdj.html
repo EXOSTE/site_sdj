@@ -176,39 +176,31 @@
         </div>
     </section>
 
-    <!-- Mois de l'autisme Banner -->
-    <section class="awareness-banner">
-        <div class="container banner-content">
-            <div class="banner-text" data-aos="fade-right">
-                <span class="banner-label">Sensibilisation</span>
-                <h2>Le mois de l'autisme</h2>
-                <p>Des moments uniques : Séjours Parent-Enfant, un temps de répit et de partage pour reconstruire des
-                    liens forts.</p>
-                <a href="https://www.allodons.fr/lesilencedesjustes/categories/site-new" target="_blank"
-                    class="btn-mega-donate">
-                    <span class="btn-mega-bg"></span>
-                    <span class="btn-mega-particles">
-                        <span class="particle"></span>
-                        <span class="particle"></span>
-                        <span class="particle"></span>
-                        <span class="particle"></span>
-                        <span class="particle"></span>
-                        <span class="particle"></span>
-                    </span>
-                    <span class="btn-mega-content">
-                        <i class="fa-solid fa-heart"></i>
-                        <span>FAIRE UN DON</span>
-                    </span>
-                    <span class="btn-mega-shine"></span>
-                </a>
-            </div>
-            <div class="banner-video" data-aos="fade-left" data-aos-delay="200">
-                <div class="video-placeholder-lg">
-                    <img src="images/imagesdj.png" alt="Des moments uniques" class="video-thumb">
-                    <a href="https://youtu.be/j9RUr5_1oLE" target="_blank" class="play-button"><i
-                            class="fa-solid fa-play"></i></a>
-                </div>
-            </div>
+    <!-- CINEMATIC VIDEO SECTION (Mois de l'autisme) -->
+    <section class="cinematic-section">
+        <img src="images/imagesdj.png" alt="Mois de l'autisme" class="cinematic-bg">
+        <div class="cinematic-content" data-aos="fade-up">
+            <span class="cinematic-label">Événement National</span>
+            <h2 class="cinematic-title">Le Mois de l'Autisme</h2>
+            <a href="https://youtu.be/j9RUr5_1oLE" target="_blank" class="play-button-pulse">
+                <i class="fa-solid fa-play" style="margin-left:5px;"></i>
+            </a>
+            <p class="cinematic-desc">Des moments uniques : Séjours Parent-Enfant, un temps de répit et de partage pour
+                reconstruire des liens forts. Découvrez notre reportage exclusif.</p>
+            <a href="https://www.allodons.fr/lesilencedesjustes/categories/site-new" target="_blank"
+                class="btn-mega-donate" style="margin-top:0;">
+                <span class="btn-mega-bg"></span>
+                <span class="btn-mega-particles">
+                    <span class="particle"></span>
+                    <span class="particle"></span>
+                    <span class="particle"></span>
+                </span>
+                <span class="btn-mega-content">
+                    <i class="fa-solid fa-heart"></i>
+                    <span>Soutenir l'initiative</span>
+                </span>
+                <span class="btn-mega-shine"></span>
+            </a>
         </div>
     </section>
 
@@ -479,52 +471,60 @@
         <div class="container">
             <div class="text-center mb-5" data-aos="fade-up">
                 <span class="section-subtitle">Dernières Nouvelles</span>
-                <h2>Actualités</h2>
+                <h2>Le Journal du Silence</h2>
             </div>
-            <div class="missions-grid">
-                <!-- News 1 -->
-                <div class="card" data-aos="flip-left" data-aos-delay="0">
-                    <div class="card-img" style="height:200px;">
-                        <img src="images/mission-education.png" style="object-fit:cover; width:100%; height:100%;"
-                            alt="News Image">
-                    </div>
-                    <div class="card-content">
-                        <span class="date-badge">Avril 2024</span>
-                        <h3>L’Autisme & nous, le retour !</h3>
-                        <p>Retour sur les événements marquants du mois de l'autisme.</p>
-                        <a href="actualites.html" class="read-more">Lire l'article</a>
-                    </div>
-                </div>
-                <!-- News 2 -->
-                <div class="card" data-aos="flip-left" data-aos-delay="150">
-                    <div class="card-img" style="height:200px;">
-                        <img src="images/mission-care.png" style="object-fit:cover; width:100%; height:100%;"
-                            alt="News Image">
-                    </div>
-                    <div class="card-content">
-                        <span class="date-badge">Mars 2024</span>
-                        <h3>L’importance d’un diagnostic précoce</h3>
-                        <p>Agir tôt pour un meilleur accompagnement.</p>
-                        <a href="actualites.html" class="read-more">Lire l'article</a>
+
+            <!-- MAGAZINE LAYOUT -->
+            <div class="magazine-grid">
+
+                <!-- 1. Featured Article (Big Left) -->
+                <div class="featured-article" data-aos="fade-right">
+                    <img src="images/mission-education.png" alt="Featured News" class="featured-img">
+                    <div class="featured-overlay">
+                        <span class="featured-date">Avril 2024 • Événement</span>
+                        <h3 class="featured-title">L’Autisme & nous : Le grand retour !</h3>
+                        <p class="featured-excerpt">Retour en images sur les événements marquants du mois de l'autisme.
+                            Une mobilisation sans précédent des familles, des professionnels et de nos partenaires pour
+                            sensibiliser le grand public.</p>
+                        <a href="actualites.html" class="btn btn-primary" style="margin-top:20px;">Lire le reportage</a>
                     </div>
                 </div>
-                <!-- News 3 -->
-                <div class="card" data-aos="flip-left" data-aos-delay="300">
-                    <div class="card-img" style="height:200px;">
-                        <img src="images/mission-work.png" style="object-fit:cover; width:100%; height:100%;"
-                            alt="News Image">
+
+                <!-- 2. Sidebar List (Right) -->
+                <div class="news-sidebar" data-aos="fade-left" data-aos-delay="200">
+
+                    <!-- Item 1 -->
+                    <div class="sidebar-item">
+                        <img src="images/mission-care.png" alt="Thumb" class="sidebar-thumb">
+                        <div class="sidebar-content">
+                            <h4>L’importance d’un diagnostic précoce</h4>
+                            <span class="sidebar-date">Mars 2024 • Santé</span>
+                        </div>
                     </div>
-                    <div class="card-content">
-                        <span class="date-badge">Fev 2024</span>
-                        <h3>Moments précieux</h3>
-                        <p>Reportage sur les ateliers quotidiens.</p>
-                        <a href="actualites.html" class="read-more">Lire l'article</a>
+
+                    <!-- Item 2 -->
+                    <div class="sidebar-item">
+                        <img src="images/mission-work.png" alt="Thumb" class="sidebar-thumb">
+                        <div class="sidebar-content">
+                            <h4>Moments précieux : Immersion dans nos ateliers</h4>
+                            <span class="sidebar-date">Fév 2024 • Vie Sociale</span>
+                        </div>
                     </div>
+
+                    <!-- Item 3 -->
+                    <div class="sidebar-item">
+                        <img src="images/photo.png" alt="Thumb" class="sidebar-thumb">
+                        <div class="sidebar-content">
+                            <h4>Séjour Hiver : Les inscriptions sont ouvertes</h4>
+                            <span class="sidebar-date">Jan 2024 • Loisirs</span>
+                        </div>
+                    </div>
+
+                    <a href="actualites.html" class="btn btn-outline"
+                        style="width:100%; text-align:center; color:var(--primary); border-color:var(--primary);">Toutes
+                        les actualités</a>
                 </div>
-            </div>
-            <div class="text-center" style="margin-top: 40px;">
-                <a href="actualites.html" class="btn btn-outline"
-                    style="color: var(--primary); border-color: var(--primary);">Voir toutes les actualités</a>
+
             </div>
         </div>
     </section>
