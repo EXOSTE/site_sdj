@@ -58,7 +58,7 @@
     </div>
 
     <!-- Header -->
-    <header id="navbar">
+    <header id="navbar" data-aos="fade-down" data-aos-duration="1200">
         <div class="container">
             <a href="sdj.html" class="logo">
                 <img src="images/logo.png" alt="Le Silence Des Justes">
@@ -179,7 +179,7 @@
     <!-- Mois de l'autisme Banner -->
     <section class="awareness-banner">
         <div class="container banner-content">
-            <div class="banner-text">
+            <div class="banner-text" data-aos="fade-right">
                 <span class="banner-label">Sensibilisation</span>
                 <h2>Le mois de l'autisme</h2>
                 <p>Des moments uniques : Séjours Parent-Enfant, un temps de répit et de partage pour reconstruire des
@@ -202,7 +202,7 @@
                     <span class="btn-mega-shine"></span>
                 </a>
             </div>
-            <div class="banner-video">
+            <div class="banner-video" data-aos="fade-left" data-aos-delay="200">
                 <div class="video-placeholder-lg">
                     <img src="images/imagesdj.png" alt="Des moments uniques" class="video-thumb">
                     <a href="https://youtu.be/j9RUr5_1oLE" target="_blank" class="play-button"><i
@@ -496,14 +496,14 @@
         <div class="container">
             <div class="footer-grid">
                 <!-- Column 1: About -->
-                <div class="footer-about">
+                <div class="footer-about" data-aos="fade-up" data-aos-delay="0">
                     <h4>Le Silence Des Justes</h4>
                     <p>Une association dédiée à l'accompagnement des personnes autistes et de leurs familles pour une
                         meilleure inclusion sociale et professionnelle.</p>
                 </div>
 
                 <!-- Column 2: Quick Links (2-column grid) -->
-                <div class="footer-links">
+                <div class="footer-links" data-aos="fade-up" data-aos-delay="100">
                     <h4>Navigation</h4>
                     <ul class="footer-nav-grid">
                         <li><a href="association.html"><i class="fa-solid fa-chevron-right"></i> L'Association</a></li>
@@ -516,7 +516,7 @@
                 </div>
 
                 <!-- Column 3: Contact -->
-                <div class="footer-contact">
+                <div class="footer-contact" data-aos="fade-up" data-aos-delay="200">
                     <h4>Contactez-nous</h4>
                     <ul class="contact-list">
                         <li><i class="fa-solid fa-location-dot"></i> 18–26 Rue Goubet<br>75019 PARIS</li>
@@ -536,7 +536,7 @@
                 </div>
 
                 <!-- Column 4: Newsletter -->
-                <div class="footer-newsletter">
+                <div class="footer-newsletter" data-aos="fade-up" data-aos-delay="300">
                     <h4>Newsletter</h4>
                     <p style="margin-bottom:15px;">Inscrivez-vous pour recevoir nos actualités.</p>
                     <form class="newsletter-form">
@@ -560,9 +560,10 @@
     <script src="js/script.js"></script>
     <script>
         AOS.init({
-            duration: 800,
+            duration: 1000,
             once: true,
-            offset: 100
+            offset: 50,
+            easing: 'ease-out-cubic'
         });
 
         var swiper = new Swiper(".partner-swiper", {
