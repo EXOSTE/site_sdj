@@ -12,18 +12,51 @@ window.addEventListener("load", () => {
 function animateHeroText() {
   const heroTitle = document.querySelector(".hero h1");
   if (heroTitle) {
-    // Wrap letters in spans
-    const text = heroTitle.textContent;
-    heroTitle.innerHTML = "";
-    [...text].forEach((char, index) => {
-      const span = document.createElement("span");
-      span.textContent = char;
-      span.className = "char-animation";
-      span.style.transitionDelay = `${index * 50}ms`;
-      heroTitle.appendChild(span);
-      // Force reflow
-      void span.offsetWidth;
-      span.classList.add("visible");
+    const children = Array.from(heroTitle.childNodes);
+    const originalContent = children.map(node => node.cloneNode(true)); // Keep a copy if needed, or just iterate
+    heroTitle.innerHTML = ""; // Clear content
+
+    let globalIndex = 0;
+
+    originalContent.forEach(node => {
+      if (node.nodeType === 3) { // Text Node
+        const text = node.textContent;
+        [...text].forEach(char => {
+          const span = document.createElement("span");
+          if (char === " ") span.innerHTML = "&nbsp;";
+          else span.textContent = char;
+          span.className = "char-animation";
+          span.style.transitionDelay = `${globalIndex * 50}ms`;
+          heroTitle.appendChild(span);
+
+          requestAnimationFrame(() => {
+            span.classList.add("visible");
+          });
+          globalIndex++;
+        });
+      } else if (node.nodeType === 1) { // Element Node
+        if (node.tagName === "BR") {
+          heroTitle.appendChild(document.createElement("br"));
+        } else {
+          // Assumed to be the span (e.g. text-accent-italic)
+          const wrapper = node.cloneNode(false); // Clone container without children
+          heroTitle.appendChild(wrapper);
+          const text = node.textContent;
+          [...text].forEach(char => {
+            const span = document.createElement("span");
+            if (char === " ") span.innerHTML = "&nbsp;";
+            else span.textContent = char;
+            span.className = "char-animation";
+            span.style.transitionDelay = `${globalIndex * 50}ms`;
+            wrapper.appendChild(span);
+
+            requestAnimationFrame(() => {
+              span.classList.add("visible");
+            });
+            globalIndex++;
+          });
+        }
+      }
     });
   }
 
