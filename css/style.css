@@ -3410,3 +3410,165 @@ body.loaded #preloader .preloader-content {
         top: -40px;
     }
 }
+/* --- MAXIMALIST EXPANSION PHASE 2 --- */
+
+/* 1. PROJECT SPOTLIGHTS (replacing simple grid) */
+.project-spotlight-section {
+    padding: 100px 0;
+    position: relative;
+    background: #fff;
+}
+
+.project-spotlight-item {
+    display: flex;
+    align-items: stretch;
+    /* Full height match */
+    margin-bottom: 100px;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.05);
+    border-radius: 20px;
+    overflow: hidden;
+    background: white;
+    transition: transform 0.4s ease;
+}
+
+.project-spotlight-item:hover {
+    transform: translateY(-10px);
+}
+
+.project-spotlight-visual {
+    flex: 1.2;
+    background: #f0f4f8;
+    position: relative;
+    min-height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.project-spotlight-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.7s ease;
+}
+
+.project-spotlight-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(22, 71, 158, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.project-spotlight-icon {
+    font-size: 5rem;
+    color: white;
+    text-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    opacity: 0.9;
+}
+
+.project-spotlight-item:hover .project-spotlight-img {
+    transform: scale(1.1);
+}
+
+.project-spotlight-content {
+    flex: 1;
+    padding: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+}
+
+.project-label {
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+    color: var(--accent);
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.project-spotlight-content h3 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.project-spotlight-content p {
+    font-size: 1.1rem;
+    color: var(--text-light);
+    margin-bottom: 30px;
+}
+
+/* 2. STATS PARALLAX (Dedicated Section) */
+.stats-parallax-section {
+    background-image: url('../images/photo.png');
+    /* Reuse hero or other meaningful img */
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    padding: 150px 0;
+    position: relative;
+    color: white;
+    text-align: center;
+}
+
+.stats-parallax-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(22, 71, 158, 0.9) 0%, rgba(14, 165, 233, 0.8) 100%);
+}
+
+.stats-container-large {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+.stat-item-large {
+    flex: 1;
+    min-width: 250px;
+}
+
+.stat-number-huge {
+    font-size: 5rem;
+    font-weight: 800;
+    display: block;
+    margin-bottom: 10px;
+    font-family: var(--font-heading);
+    text-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.stat-label-large {
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    opacity: 0.9;
+}
+
+/* RESPONSIVE */
+@media (max-width: 992px) {
+    .project-spotlight-item {
+        flex-direction: column;
+    }
+
+    .project-spotlight-visual {
+        min-height: 250px;
+    }
+
+    .project-spotlight-content {
+        padding: 40px;
+    }
+}
