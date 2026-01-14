@@ -1,3 +1,40 @@
+// Preloader Logic
+window.addEventListener("load", () => {
+  setTimeout(() => {
+    document.body.classList.add("loaded");
+    // Trigger Hero Animations after preloader
+    setTimeout(() => {
+      animateHeroText();
+    }, 800);
+  }, 1500); // Wait a bit for the "gift" effect
+});
+
+function animateHeroText() {
+  const heroTitle = document.querySelector(".hero h1");
+  if (heroTitle) {
+    // Wrap letters in spans
+    const text = heroTitle.textContent;
+    heroTitle.innerHTML = "";
+    [...text].forEach((char, index) => {
+      const span = document.createElement("span");
+      span.textContent = char;
+      span.className = "char-animation";
+      span.style.transitionDelay = `${index * 50}ms`;
+      heroTitle.appendChild(span);
+      // Force reflow
+      void span.offsetWidth;
+      span.classList.add("visible");
+    });
+  }
+
+  // Trigger other elements
+  document.querySelectorAll(".hero p, .hero-btns").forEach((el, index) => {
+    setTimeout(() => {
+      el.classList.add("visible");
+    }, 1000 + (index * 200));
+  });
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   let s = document.getElementById("particles-canvas");
   if (s) {
@@ -50,10 +87,10 @@ document.addEventListener("DOMContentLoaded", () => {
         (null != a.x &&
           null != a.y &&
           ((t = a.x - this.x),
-          (r = (e = a.y - this.y) / (e = Math.sqrt(t * t + e * e))),
-          (n = (t / e) * (t = ((t = a.radius) - e) / t) * this.density),
-          (r = r * t * this.density),
-          e < a.radius) &&
+            (r = (e = a.y - this.y) / (e = Math.sqrt(t * t + e * e))),
+            (n = (t / e) * (t = ((t = a.radius) - e) / t) * this.density),
+            (r = r * t * this.density),
+            e < a.radius) &&
           ((this.x -= n), (this.y -= r)),
           (this.x += this.speedX),
           (this.y += this.speedY),
@@ -76,11 +113,11 @@ document.addEventListener("DOMContentLoaded", () => {
               r = i[t].y - i[e].y;
             (n = Math.sqrt(n * n + r * r)) < 120 &&
               ((o.strokeStyle = `rgba(255, 255, 255, ${0.15 - n / 800})`),
-              (o.lineWidth = 1),
-              o.beginPath(),
-              o.moveTo(i[t].x, i[t].y),
-              o.lineTo(i[e].x, i[e].y),
-              o.stroke());
+                (o.lineWidth = 1),
+                o.beginPath(),
+                o.moveTo(i[t].x, i[t].y),
+                o.lineTo(i[e].x, i[e].y),
+                o.stroke());
           }
         requestAnimationFrame(e);
       })(),
@@ -91,8 +128,8 @@ document.addEventListener("DOMContentLoaded", () => {
   let n = document.createElement("div"),
     r =
       ((n.className = "scroll-progress"),
-      document.body.prepend(n),
-      document.getElementById("navbar")),
+        document.body.prepend(n),
+        document.getElementById("navbar")),
     o = document.querySelector(".top-bar");
   function i() {
     60 < window.scrollY
@@ -112,8 +149,8 @@ document.addEventListener("DOMContentLoaded", () => {
       e.forEach((e) => {
         e.isIntersecting &&
           (e.target.classList.add("visible"),
-          (e.target.style.animationPlayState = "running"),
-          t.unobserve(e.target));
+            (e.target.style.animationPlayState = "running"),
+            t.unobserve(e.target));
       });
     },
     { root: null, rootMargin: "0px 0px -50px 0px", threshold: 0.15 },
@@ -123,41 +160,41 @@ document.addEventListener("DOMContentLoaded", () => {
     .forEach((e) => a.observe(e));
   var l = document.querySelectorAll(".stat-number");
   let d = new IntersectionObserver(
-      (e) => {
-        e.forEach((e) => {
-          if (e.isIntersecting) {
-            var r = parseInt(e.target.textContent);
-            if (!isNaN(r)) {
-              var o = e.target;
-              var i = r;
-              r = 1500;
-              let t = 0,
-                n = i / (r / 16);
-              !(function e() {
-                (t += n) < i
-                  ? ((o.textContent = Math.floor(t)), requestAnimationFrame(e))
-                  : (o.textContent = i);
-              })();
-            }
-            d.unobserve(e.target);
+    (e) => {
+      e.forEach((e) => {
+        if (e.isIntersecting) {
+          var r = parseInt(e.target.textContent);
+          if (!isNaN(r)) {
+            var o = e.target;
+            var i = r;
+            r = 1500;
+            let t = 0,
+              n = i / (r / 16);
+            !(function e() {
+              (t += n) < i
+                ? ((o.textContent = Math.floor(t)), requestAnimationFrame(e))
+                : (o.textContent = i);
+            })();
           }
-        });
-      },
-      { threshold: 0.5 },
-    ),
+          d.unobserve(e.target);
+        }
+      });
+    },
+    { threshold: 0.5 },
+  ),
     c =
       (l.forEach((e) => d.observe(e)),
-      document.querySelectorAll('a[href^="#"]').forEach((e) => {
-        e.addEventListener("click", function (e) {
-          var t = this.getAttribute("href");
-          "#" !== t &&
-            (e.preventDefault(), (e = document.querySelector(t))) &&
-            ((t = r ? r.offsetHeight + 20 : 100),
-            (e = e.getBoundingClientRect().top + window.scrollY - t),
-            window.scrollTo({ top: e, behavior: "smooth" }));
-        });
-      }),
-      document.querySelector(".hero-graphic")),
+        document.querySelectorAll('a[href^="#"]').forEach((e) => {
+          e.addEventListener("click", function (e) {
+            var t = this.getAttribute("href");
+            "#" !== t &&
+              (e.preventDefault(), (e = document.querySelector(t))) &&
+              ((t = r ? r.offsetHeight + 20 : 100),
+                (e = e.getBoundingClientRect().top + window.scrollY - t),
+                window.scrollTo({ top: e, behavior: "smooth" }));
+          });
+        }),
+        document.querySelector(".hero-graphic")),
     h =
       (c &&
         window.addEventListener("scroll", () => {
@@ -165,7 +202,7 @@ document.addEventListener("DOMContentLoaded", () => {
           e < 800 &&
             (c.style.transform = `translateY(${0.15 * e}px) rotate(${0.02 * e}deg)`);
         }),
-      document.querySelector(".hero-gradient"));
+        document.querySelector(".hero-gradient"));
   (h &&
     (h.addEventListener("mousemove", (e) => {
       var t = h.getBoundingClientRect(),
@@ -173,9 +210,9 @@ document.addEventListener("DOMContentLoaded", () => {
         e = 20 * ((e.clientY - t.top) / t.height - 0.5);
       c && (c.style.transform = `translate(${n}px, ${e}px)`);
     }),
-    h.addEventListener("mouseleave", () => {
-      c && (c.style.transform = "translate(0, 0)");
-    })),
+      h.addEventListener("mouseleave", () => {
+        c && (c.style.transform = "translate(0, 0)");
+      })),
     document.querySelectorAll(".card, .project-logo-card").forEach((r) => {
       (r.addEventListener("mousemove", (e) => {
         var t = r.getBoundingClientRect(),
@@ -233,9 +270,9 @@ document.addEventListener("DOMContentLoaded", () => {
     e.forEach((e) => {
       e.isIntersecting &&
         (((e = e.target).src = e.dataset.src),
-        e.removeAttribute("data-src"),
-        e.classList.add("loaded"),
-        u.unobserve(e));
+          e.removeAttribute("data-src"),
+          e.classList.add("loaded"),
+          u.unobserve(e));
     });
   });
   (l.forEach((e) => u.observe(e)),
