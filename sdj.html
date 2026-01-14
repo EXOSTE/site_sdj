@@ -254,67 +254,132 @@
     </section>
 
     <!-- Missions Section (6 Circular Icons - Original Style) -->
-    <section class="section bg-light" id="missions">
+    <!-- Parallax Break Section -->
+    <section class="parallax-section" style="background-image: url('images/photo.png');">
+        <div class="parallax-overlay"></div>
+        <div class="parallax-content" data-aos="zoom-in">
+            <p class="parallax-quote">"L'autisme n'est pas un monde à part, mais une part de notre monde."</p>
+            <a href="contact.html" class="btn btn-outline" style="color: white; border-color: white;">Rejoignez-nous</a>
+        </div>
+    </section>
+
+    <!-- IMMERSIVE MISSIONS SECTION (Zig-Zag) -->
+    <section class="section bg-light immersive-missions" id="missions">
         <div class="container">
             <div class="text-center mb-5" data-aos="fade-up">
-                <span class="section-subtitle">Nos Domaines d'Intervention</span>
-                <h2>Un accompagnement global</h2>
+                <span class="section-subtitle">Notre Expertise</span>
+                <h2>Un Parcours d'Excellence</h2>
+                <p style="max-width: 600px; margin: 0 auto; margin-top: 15px;">Découvrez nos 6 piliers d'accompagnement,
+                    conçus pour suivre chaque étape de la vie.</p>
             </div>
 
-            <div class="mission-icon-grid">
-                <!-- Icon 1 -->
-                <div class="mission-icon-item" data-aos="fade-up" data-aos-delay="0">
-                    <div class="mission-icon-circle">
-                        <i class="fa-solid fa-user-doctor"></i>
+            <div class="missions-container">
+
+                <!-- Row 1: Parcours de Soin -->
+                <div class="mission-row" data-aos="fade-right">
+                    <div class="mission-visual-large">
+                        <div class="mission-circle-huge">
+                            <i class="fa-solid fa-user-doctor"></i>
+                        </div>
                     </div>
-                    <h3>Parcours de Soin</h3>
-                    <p>Prise en charge médicalisée et personnalisée pour chaque enfant et adulte.</p>
+                    <div class="mission-content-large">
+                        <span class="mission-step-number">01</span>
+                        <h3>Parcours de Soin</h3>
+                        <p>Une prise en charge médicalisée d'excellence. Nous coordonnons des équipes
+                            pluridisciplinaires (médecins, psychologues, psychomotriciens) pour établir un diagnostic
+                            précis et un suivi personnalisé, adapté aux besoins uniques de chaque enfant et adulte.</p>
+                        <a href="pole-soin.html" class="read-more">En savoir plus <i
+                                class="fa-solid fa-arrow-right"></i></a>
+                    </div>
                 </div>
 
-                <!-- Icon 2 -->
-                <div class="mission-icon-item" data-aos="fade-up" data-aos-delay="100">
-                    <div class="mission-icon-circle">
-                        <i class="fa-solid fa-campground"></i>
+                <!-- Row 2: Activités -->
+                <div class="mission-row" data-aos="fade-left">
+                    <div class="mission-visual-large">
+                        <div class="mission-circle-huge">
+                            <i class="fa-solid fa-campground"></i>
+                        </div>
                     </div>
-                    <h3>Activités & Séjours</h3>
-                    <p>Séjours adaptés et activités de loisirs pour développer l'autonomie.</p>
+                    <div class="mission-content-large">
+                        <span class="mission-step-number">02</span>
+                        <h3>Activités & Séjours</h3>
+                        <p>Parce que l'épanouissement passe par la découverte. Nos séjours adaptés (été, hiver) et nos
+                            activités week-end offrent des moments de répit aux familles et des expériences inoubliables
+                            pour développer l'autonomie et le lien social.</p>
+                        <a href="activites.html" class="read-more">Nos séjours <i
+                                class="fa-solid fa-arrow-right"></i></a>
+                    </div>
                 </div>
 
-                <!-- Icon 3 -->
-                <div class="mission-icon-item" data-aos="fade-up" data-aos-delay="200">
-                    <div class="mission-icon-circle">
-                        <i class="fa-solid fa-graduation-cap"></i>
+                <!-- Row 3: Inclusion Scolaire -->
+                <div class="mission-row" data-aos="fade-right">
+                    <div class="mission-visual-large">
+                        <div class="mission-circle-huge">
+                            <i class="fa-solid fa-graduation-cap"></i>
+                        </div>
                     </div>
-                    <h3>Inclusion Scolaire</h3>
-                    <p>Favoriser la scolarisation en milieu ordinaire avec un soutien adapté.</p>
+                    <div class="mission-content-large">
+                        <span class="mission-step-number">03</span>
+                        <h3>Inclusion Scolaire</h3>
+                        <p>L'école pour tous est un droit. Nous déployons des AESH et des dispositifs spécialisés au
+                            sein des écoles ordinaires pour permettre aux enfants autistes d'apprendre aux côtés de
+                            leurs camarades, dans un environnement bienveillant.</p>
+                        <a href="pole-ecole.html" class="read-more">Notre approche <i
+                                class="fa-solid fa-arrow-right"></i></a>
+                    </div>
                 </div>
 
-                <!-- Icon 4 -->
-                <div class="mission-icon-item" data-aos="fade-up" data-aos-delay="300">
-                    <div class="mission-icon-circle">
-                        <i class="fa-solid fa-briefcase"></i>
+                <!-- Row 4: Insertion Pro -->
+                <div class="mission-row" data-aos="fade-left">
+                    <div class="mission-visual-large">
+                        <div class="mission-circle-huge">
+                            <i class="fa-solid fa-briefcase"></i>
+                        </div>
                     </div>
-                    <h3>Insertion Professionnelle</h3>
-                    <p>Accompagnement vers l'emploi et l'autonomie pour les jeunes adultes.</p>
+                    <div class="mission-content-large">
+                        <span class="mission-step-number">04</span>
+                        <h3>Insertion Professionnelle</h3>
+                        <p>Transformer la différence en compétence. Grâce à nos partenariats entreprises et notre
+                            coaching job, nous accompagnons les jeunes adultes vers l'emploi durable et l'indépendance
+                            financière.</p>
+                        <a href="pole-travail.html" class="read-more">L'insertion <i
+                                class="fa-solid fa-arrow-right"></i></a>
+                    </div>
                 </div>
 
-                <!-- Icon 5 -->
-                <div class="mission-icon-item" data-aos="fade-up" data-aos-delay="400">
-                    <div class="mission-icon-circle">
-                        <i class="fa-solid fa-building"></i>
+                <!-- Row 5: Plateformes -->
+                <div class="mission-row" data-aos="fade-right">
+                    <div class="mission-visual-large">
+                        <div class="mission-circle-huge">
+                            <i class="fa-solid fa-building"></i>
+                        </div>
                     </div>
-                    <h3>Plateformes</h3>
-                    <p>Coordonner le parcours de vie avec les familles et les partenaires.</p>
+                    <div class="mission-content-large">
+                        <span class="mission-step-number">05</span>
+                        <h3>Plateformes de Coordination</h3>
+                        <p>Le fil conducteur de votre parcours. Nos plateformes (PCPE, PCO) simplifient les démarches
+                            administratives et assurent la fluidité entre les différents acteurs du soin, de l'école et
+                            de la famille.</p>
+                        <a href="#" class="read-more">Découvrir <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
                 </div>
 
-                <!-- Icon 6 -->
-                <div class="mission-icon-item" data-aos="fade-up" data-aos-delay="500">
-                    <div class="mission-icon-circle">
-                        <i class="fa-solid fa-heart"></i>
+                <!-- Row 6: GAN -->
+                <div class="mission-row" data-aos="fade-left">
+                    <div class="mission-visual-large">
+                        <div class="mission-circle-huge">
+                            <i class="fa-solid fa-heart"></i>
+                        </div>
                     </div>
-                    <h3>GAN & Loisirs</h3>
-                    <p>Créer des moments de joie et de partage à travers les activités.</p>
+                    <div class="mission-content-large">
+                        <span class="mission-step-number">06</span>
+                        <h3>GAN & Loisirs</h3>
+                        <p>La joie au cœur de l'action. Des espaces de jeux, des ateliers artistiques et des sorties
+                            culturelles pour cultiver le bonheur d'être ensemble, tout simplement.</p>
+                        <a href="#" class="read-more">Rejoindre <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
                 </div>
+
             </div>
         </div>
     </section>
